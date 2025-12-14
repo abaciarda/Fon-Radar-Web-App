@@ -43,3 +43,23 @@ body {
 hr {
   border-color: #e5e7e9;
 }
+
+.recharts-surface:focus {
+  outline: 0px;
+}
+
+.recharts-layer {
+  outline: 0px;
+}
+
+.recharts-curve.recharts-area {
+  outline: 0px;
+}
+
+.recharts-wrapper:focus {
+  outline: 0px;
+}
+
+g {
+  outline: 0px;
+}
