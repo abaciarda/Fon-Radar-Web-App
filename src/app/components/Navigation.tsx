@@ -24,7 +24,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
         
         <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center size-10 rounded-full bg-gray-200">
+          <div className="flex items-center justify-center size-10 rounded-full bg-primary">
             <Target />
           </div>
           <span className="text-xl font-bold tracking-tight text-text-main">

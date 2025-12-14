@@ -27,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${splineSans.variable} ${splineSansMono.variable} antialiased`}
+        className={`${splineSans.variable} ${splineSansMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Navigation />
-        {children}
+        <main className="h-full">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
