@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* LIGHT MODE (default) */
+:root {
+  --font-sans: var(--font-spline-sans);
+  --font-mono: var(--font-spline-sans-mono);
+
+  /* Color Palette - LIGHT */
+  --primary: #f9f506;                /* ana renk */
+  --secondary: #ffffff;              /* arka plan */
+  --tertiary: #f8f9fa;               /* offwhite */
+  --softblue: #f0f4f8;               /* yumuşak mavi arka plan */
+
+  --text-main: #18181b;
+  --text-muted: #52525b;
+
+  /* Body vars */
+  --background: var(--secondary);
+  --foreground: var(--text-main);
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-softblue: var(--softblue);
+
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-spline-sans);
+}
+
+
+hr {
+  border-color: #e5e7e9;
+}
