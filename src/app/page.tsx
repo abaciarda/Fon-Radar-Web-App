@@ -68,7 +68,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="relative w-full aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden bg-background-softblue/50 flex items-center justify-center p-2 lg:p-12">
+            <div className="relative w-full aspect-square lg:aspect-4/3 rounded-3xl overflow-hidden bg-background-softblue/50 flex items-center justify-center p-2 lg:p-12">
               <div className="relative w-full h-full bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col gap-6">
                 <div className="flex items-center justify-between border-b border-gray-50 pb-4">
                   <div className="py-1 w-20 bg-gray-100 rounded-full text-center text-sm px-4">BIST100</div>
@@ -174,7 +174,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative w-full md:aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden grid lg:grid-cols-2 p-1 gap-4">
+            <div className="relative w-full md:aspect-square xl:aspect-4/3 rounded-3xl overflow-hidden grid lg:grid-cols-2 p-1 gap-4">
               {infoCards.map((card, index) => (
                 <div key={index} className="p-6 bg-white rounded-2xl drop-shadow-sm border border-gray-200 flex flex-col gap-1">
                   <div className="flex items-center gap-4">

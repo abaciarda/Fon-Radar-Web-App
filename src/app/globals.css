@@ -29,7 +29,9 @@
   --color-text-muted: var(--text-muted);
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--background);
