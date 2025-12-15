@@ -1,6 +1,6 @@
 "use client"
 
-import { Target, Menu, X } from "lucide-react"
+import { Menu, X, RadarIcon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
@@ -25,7 +25,7 @@ export default function Navigation() {
         
         <Link href={"/"} className="flex items-center gap-2">
           <div className="flex items-center justify-center size-10 rounded-full bg-primary text-white">
-            <Target />
+            <RadarIcon />
           </div>
           <span className="text-xl font-bold tracking-tight text-text-main">
             FonRadar

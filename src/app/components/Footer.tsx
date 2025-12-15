@@ -1,4 +1,4 @@
-import { Target } from "lucide-react";
+import { RadarIcon } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-primary rounded-full flex justify-center items-center text-white">
-                            <Target />
+                            <RadarIcon />
                         </div>
                         <p className="text-xl font-bold text-text-main">FonRadar</p>
                     </div>
