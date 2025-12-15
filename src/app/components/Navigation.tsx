@@ -37,14 +37,7 @@ export default function Navigation() {
             <Link
               key={item.title}
               href={item.url}
-              className={`
-                h-10 px-5 rounded-full flex items-center text-sm font-medium transition-all
-                ${
-                  isActive(item.url)
-                    ? "bg-primary text-white"
-                    : "text-text-muted hover:bg-primary hover:text-white"
-                }
-              `}
+              className={` h-10 px-5 rounded-full flex items-center text-sm font-medium transition-all ${ isActive(item.url) ? "bg-primary text-white" : "text-text-muted hover:bg-primary hover:text-white" } `}
             >
               {item.title}
             </Link>
@@ -67,14 +60,7 @@ export default function Navigation() {
                 key={item.title}
                 href={item.url}
                 onClick={() => setOpen(false)}
-                className={`
-                  h-11 px-4 rounded-xl flex items-center text-sm font-medium transition
-                  ${
-                    isActive(item.url)
-                      ? "bg-primary text-black"
-                      : "text-text-muted hover:bg-primary hover:text-black"
-                  }
-                `}
+                className={` h-11 px-4 rounded-xl flex items-center text-sm font-medium transition ${ isActive(item.url) ? "bg-primary text-black" : "text-text-muted hover:bg-primary hover:text-black" } `}
               >
                 {item.title}
               </Link>
