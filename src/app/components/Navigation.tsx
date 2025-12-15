@@ -23,14 +23,14 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
         
-        <div className="flex items-center gap-2">
+        <Link href={"/"} className="flex items-center gap-2">
           <div className="flex items-center justify-center size-10 rounded-full bg-primary">
             <Target />
           </div>
           <span className="text-xl font-bold tracking-tight text-text-main">
             FonRadar
           </span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-1">
           {navMenus.map((item) => (

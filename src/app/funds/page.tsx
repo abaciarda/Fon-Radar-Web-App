@@ -1,6 +1,7 @@
 "use client"
 import { Category } from "@/types/Category";
 import { useState } from "react";
+import Link from "next/link";
 import FundCategories from "./fund-categories";
 
 export default function FundsPage() {
@@ -25,12 +26,12 @@ export default function FundsPage() {
                     <FundCategories selected={selectedCategory} onChange={setSelectedCategory} />
                     <div className="grid md:grid-cols-6 xl:grid-cols-6 gap-5 pt-8">
                         {exampleFunds.map((fund) => (
-                            <div key={fund.name} className="flex flex-col gap-3 col-span-3 xl:col-span-2 bg-white border border-gray-200 rounded-2xl shadow p-8 truncate overflow-hidden hover:-translate-y-2 transition-all">
+                            <Link href={`/funds/${fund.name}`} key={fund.name} className="flex flex-col gap-3 group col-span-3 xl:col-span-2 bg-white border border-gray-200 rounded-2xl shadow p-8 truncate overflow-hidden hover:-translate-y-2 transition-all">
                                 <div className="flex gap-3">
                                     <div className="w-14 min-w-[56px] h-14 rounded-lg bg-gray-200" />
                                     <div className="flex flex-col gap-1 w-full overflow-hidden">
-                                        <p className="text-2xl font-semibold">{fund.name}</p>
-                                        <p className="text-text-muted text-sm truncate">{fund.fullName}</p>
+                                        <p className="text-2xl font-semibold group-hover:text-yellow-500 transition-colors">{fund.name}</p>
+                                        <p className="text-text-muted text-sm truncate ">{fund.fullName}</p>
                                     </div>
                                 </div>
                                 <hr />
@@ -50,7 +51,7 @@ export default function FundsPage() {
                                         <p className="text-green-600 text-sm font-medium">+{fund.income}%</p>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

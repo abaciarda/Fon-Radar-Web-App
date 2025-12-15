@@ -1,5 +1,6 @@
 "use client"
 import { ChartPieIcon, GemIcon, HandIcon, ZapIcon } from "lucide-react";
+import Link from "next/link";
 import { LineChart, Line } from "recharts";
 
 export default function Home() {
@@ -60,12 +61,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <button className="flex h-12 items-center justify-center px-8 rounded-full bg-primary text-text-main text-base font-bold shadow-sm hover:translate-y-[-1px] transition-transform">
-                  Popüler Fonlara Göz At
-                </button>
-                <button className="flex h-12 items-center justify-center px-8 rounded-full bg-softblue text-text-main text-base font-bold border border-transparent hover:border-gray-200 transition-colors">
+                <Link href={'/funds'} className="flex h-12 items-center justify-center px-8 rounded-full bg-primary text-text-main text-base font-bold shadow-sm hover:translate-y-[-6px] transition-transform">
                   Tüm Fonlara Göz At
-                </button>
+                </Link>
               </div>
             </div>
             <div className="relative w-full aspect-square lg:aspect-4/3 rounded-3xl overflow-hidden bg-background-softblue/50 flex items-center justify-center p-2 lg:p-12">
@@ -103,14 +101,14 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {monthlyPerformanceFunds.slice(0, 3).map((fund) => (
-              <div key={fund.fundName} className="p-7 bg-white rounded-2xl drop-shadow-sm border border-gray-200 flex flex-col gap-5">
+              <Link href={`/funds/${fund.fundName}`} key={fund.fundName} className="p-7 bg-white rounded-2xl drop-shadow-sm border border-gray-200 group flex flex-col gap-5 hover:-translate-y-2 transition-all duration-300">
                 <div className="flex items-center justify-between">
                   <div className="w-14 h-14 bg-gray-200 rounded-2xl"></div>
                   <div className="bg-gray-200 rounded-full py-1 px-4 text-green-800 text-sm font-bold">
                     {fund.fundPerf} %
                   </div>
                 </div>
-                <p className="text-2xl font-bold leading-[1.1]">{fund.fundName}</p>
+                <p className="text-2xl font-bold leading-[1.1] group-hover:text-yellow-500 transition-colors">{fund.fundName}</p>
                 <LineChart width={"100%"} height={30} data={data}>
                   <Line
                     type="monotone"
@@ -121,7 +119,7 @@ export default function Home() {
                     max={100}
                   />
                 </LineChart>
-              </div>
+              </Link>
             ))}
 
           </div>
@@ -136,22 +134,22 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {monthlyPerformanceFunds.slice(0, 3).map((fund) => (
-              <div key={fund.fundName} className="p-7 bg-white rounded-2xl drop-shadow-sm border border-gray-200 flex flex-col">
+              <Link href={`/funds/${fund.fundName}`} key={fund.fundName} className="p-7 bg-white rounded-2xl drop-shadow-sm border border-gray-200 group flex flex-col hover:-translate-y-2 transition-all duration-300">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 bg-gray-200 rounded-2xl"></div>
-                    <p className="text-xl font-bold">{fund.fundName}</p>
+                    <p className="text-xl font-bold group-hover:text-yellow-500 transition-colors">{fund.fundName}</p>
                   </div>
                   <div className="bg-gray-200 rounded-full py-1 px-4 text-green-800 text-sm">
                     +1.2%
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
-          <button className="flex w-max mx-auto h-12 items-center justify-center px-8 rounded-full bg-primary text-text-main text-base font-bold shadow-sm hover:translate-y-[-5px] transition-transform">
+          <Link href={'/funds'} className="flex w-max mx-auto h-12 items-center justify-center px-8 rounded-full bg-primary text-text-main text-base font-bold shadow-sm hover:translate-y-[-5px] transition-transform">
             Tüm Fonlara Göz At
-          </button>
+          </Link>
         </div>
       </div>
       <div className="relative w-full pt-16 pb-24 lg:pt-32 lg:pb-32 overflow-hidden bg-[#f8f9fa]">
