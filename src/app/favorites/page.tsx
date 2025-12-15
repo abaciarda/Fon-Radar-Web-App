@@ -64,7 +64,7 @@ export default function FavoriteFunds() {
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 pt-6 gap-x-4 gap-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-6 gap-x-4 gap-y-6">
                         {examplePositiveFunds.map((fund) => (
                             <Link key={fund.name} href={`/funds/${fund.name}`} className="bg-white border border-gray-200 rounded-xl p-7 shadow flex flex-col gap-5 group hover:-translate-y-2 transition-all duration-300">
                                 <div className="flex gap-3 relative overflow-hidden">
@@ -77,7 +77,7 @@ export default function FavoriteFunds() {
                                     <i className="ri-star-fill text-2xl text-yellow-500 cursor-pointer"></i>
                                     </div>
                                 </div>
-                                <div className="flex flex-col md:flex-row items-center justify-between">
+                                <div className="flex items-center justify-between">
                                     <div className="flex flex-col gap-0.5 h-full">
                                         <p className="text-3xl font-bold text-green-600">+%{fund.guess}</p>
                                         <p className="text-text-muted text-sm mt-auto">Tahmini günlük getiri</p> 
@@ -94,7 +94,7 @@ export default function FavoriteFunds() {
                                     </LineChart>
                                 </div>
                                 <hr />
-                                <div className="flex flex-col md:flex-row items-center justify-between">
+                                <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-1 text-sm text-text-muted">
                                         <InfoIcon className="text-primary" />
                                         <p>Son Güncelleme</p>

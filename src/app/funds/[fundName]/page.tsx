@@ -69,7 +69,7 @@ export default function FundPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 w-full md:w-auto pt-5 md:pt-0 items-end">
                             <div className="flex items-center gap-1 text-5xl font-bold text-green-600">
                                 <p>+2.45%</p>
                                 <TrendingUp className="size-12" />
