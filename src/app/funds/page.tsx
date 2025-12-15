@@ -30,7 +30,7 @@ export default function FundsPage() {
                                 <div className="flex gap-3">
                                     <div className="w-14 min-w-[56px] h-14 rounded-lg bg-gray-200" />
                                     <div className="flex flex-col gap-1 w-full overflow-hidden">
-                                        <p className="text-2xl font-semibold group-hover:text-yellow-500 transition-colors">{fund.name}</p>
+                                        <p className="text-2xl font-semibold group-hover:text-primary transition-colors">{fund.name}</p>
                                         <p className="text-text-muted text-sm truncate ">{fund.fullName}</p>
                                     </div>
                                 </div>

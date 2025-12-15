@@ -61,7 +61,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <Link href={'/funds'} className="flex h-12 items-center justify-center px-8 rounded-full bg-primary text-text-main text-base font-bold shadow-sm hover:translate-y-[-6px] transition-transform">
+                <Link href={'/funds'} className="flex h-12 items-center justify-center px-8 rounded-full bg-primary text-white text-base font-bold shadow-sm hover:translate-y-[-6px] transition-transform">
                   Tüm Fonlara Göz At
                 </Link>
               </div>
@@ -108,7 +108,7 @@ export default function Home() {
                     {fund.fundPerf} %
                   </div>
                 </div>
-                <p className="text-2xl font-bold leading-[1.1] group-hover:text-yellow-500 transition-colors">{fund.fundName}</p>
+                <p className="text-2xl font-bold leading-[1.1] group-hover:text-primary transition-colors">{fund.fundName}</p>
                 <LineChart width={"100%"} height={30} data={data}>
                   <Line
                     type="monotone"
@@ -138,7 +138,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 bg-gray-200 rounded-2xl"></div>
-                    <p className="text-xl font-bold group-hover:text-yellow-500 transition-colors">{fund.fundName}</p>
+                    <p className="text-xl font-bold group-hover:text-primary transition-colors">{fund.fundName}</p>
                   </div>
                   <div className="bg-gray-200 rounded-full py-1 px-4 text-green-800 text-sm">
                     +1.2%
@@ -147,7 +147,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <Link href={'/funds'} className="flex w-max mx-auto h-12 items-center justify-center px-8 rounded-full bg-primary text-text-main text-base font-bold shadow-sm hover:translate-y-[-5px] transition-transform">
+          <Link href={'/funds'} className="flex w-max mx-auto h-12 items-center justify-center px-8 rounded-full bg-primary text-white text-base font-bold shadow-sm hover:translate-y-[-5px] transition-transform">
             Tüm Fonlara Göz At
           </Link>
         </div>
