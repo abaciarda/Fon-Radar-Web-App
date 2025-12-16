@@ -1,4 +1,5 @@
-import { ClockIcon, DatabaseIcon, EyeIcon, InfoIcon, TargetIcon, UsersIcon } from "lucide-react";
+import { ClockIcon, DatabaseIcon, EyeIcon, InfoIcon, MailIcon, TargetIcon, UsersIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function About() {
     return (
@@ -32,8 +33,8 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="px-14 py-12 border border-blue-300 bg-blue-100 rounded-xl flex items-center gap-8">
-                        <div className="w-16 min-w-[64px] h-16 bg-white rounded-2xl flex items-center justify-center">
+                    <div className="px-14 py-12 border border-blue-300 bg-blue-100 rounded-xl flex flex-col md:flex-row items-center gap-8">
+                        <div className="w-16 min-w-[64px] h-16 bg-white rounded-2xl flex items-center justify-center mr-auto md:mr-0">
                             <InfoIcon className="text-blue-500 size-7"/>
                         </div>
                         <div className="flex flex-col gap-2">
@@ -70,6 +71,19 @@ export default function About() {
                                 Platform tamamen öğretici amaçlarla geliştirilmiştir ve herhangi bir ticari hizmet sunmaz.
                             </p>
                         </div>
+                    </div>
+                    
+                    <div className="bg-blue-100 border border-blue-300 shadow rounded-2xl p-7 flex flex-col md:flex-row items-center justify-between gap-3">
+                        <div className="flex flex-col gap-1">
+                        <p className="text-2xl font-bold">İletişim</p>
+                            <div className="text-text-muted">
+                            Kullanım şartları ile ilgili sorularınız için bizimle iletişime geçebilirsiniz.
+                            </div> 
+                        </div> 
+                        <Link href={'mailto:info@fonradar.com'} className="bg-white group border border-gray-200 rounded-full flex items-center gap-2 px-8 py-4 text-primary hover:-translate-y-1 transition-all">
+                            <MailIcon />
+                            <p className="font-semibold relative top-[0.5px] group-hover:underline">info@fonradar.com</p>
+                        </Link>
                     </div>
                 </div>
             </div>

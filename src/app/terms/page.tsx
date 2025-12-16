@@ -16,7 +16,7 @@ export default function Terms() {
                             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                 <p className="text-text-muted font-bold text-lg">1</p>
                             </div>
-                            <p className="text-2xl font-bold">Genel Bilgilendirme</p>
+                            <p className="text-lg md:text-2xl font-bold">Genel Bilgilendirme</p>
                         </div>
                         <div className="px-13 text-text-muted">
                             FonRadar, yatırım fonlarına ait verileri daha anlaşılır şekilde sunmak amacıyla geliştirilmiş bireysel ve öğretici bir platformdur. Platform üzerinde sunulan içerikler ticari bir hizmet niteliği taşımaz.
@@ -27,7 +27,7 @@ export default function Terms() {
                             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                 <p className="text-text-muted font-bold text-lg">2</p>
                             </div>
-                            <p className="text-2xl font-bold">Yatırım Tavsiyesi Niteliği Taşımaması</p>
+                            <p className="text-lg md:text-2xl font-bold">Yatırım Tavsiyesi Niteliği Taşımaması</p>
                         </div>
                         <div className="px-13 text-text-muted">
                             FonRadar üzerinde yer alan hiçbir bilgi, yorum, analiz veya görsel yatırım tavsiyesi olarak değerlendirilmemelidir. Platformda sunulan bilgiler yalnızca genel bilgilendirme amaçlıdır. Kullanıcılar, platformda yer alan içeriklere dayanarak aldıkları yatırım kararlarının tüm sorumluluğunu kendileri üstlenir.
@@ -38,7 +38,7 @@ export default function Terms() {
                             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                 <p className="text-text-muted font-bold text-lg">3</p>
                             </div>
-                            <p className="text-2xl font-bold">Veri Kaynakları ve Doğruluk</p>
+                            <p className="text-lg md:text-2xl font-bold">Veri Kaynakları ve Doğruluk</p>
                         </div>
                         <div className="px-13 text-text-muted">
                             Platformda sunulan veriler, kamuya açık ve üçüncü parti finansal veri kaynaklarından sağlanmaktadır. Veriler eş zamanlı olmayabilir ve zaman farkı içerebilir. Sunulan bilgilerin doğruluğu, eksiksizliği veya güncelliği garanti edilmez.
@@ -49,7 +49,7 @@ export default function Terms() {
                             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                 <p className="text-text-muted font-bold text-lg">4</p>
                             </div>
-                            <p className="text-2xl font-bold">Sorumluluğun Sınırlandırılması</p>
+                            <p className="text-lg md:text-2xl font-bold">Sorumluluğun Sınırlandırılması</p>
                         </div>
                         <div className="px-13 text-text-muted">
                             FonRadar; platformda yer alan bilgi, veri veya içeriklerin kullanımından doğabilecek doğrudan veya dolaylı zararlardan, veri kayıplarından, finansal kayıplardan veya teknik aksaklıklardan sorumlu tutulamaz.
@@ -60,7 +60,7 @@ export default function Terms() {
                             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                 <p className="text-text-muted font-bold text-lg">5</p>
                             </div>
-                            <p className="text-2xl font-bold">Hizmetin Değiştirilmesi veya Sonlandırılması</p>
+                            <p className="text-lg md:text-2xl font-bold">Hizmetin Değiştirilmesi veya Sonlandırılması</p>
                         </div>
                         <div className="px-13 text-text-muted">
                             FonRadar, platformun içeriğini, özelliklerini veya erişimini önceden bildirimde bulunmaksızın değiştirme, geçici olarak durdurma veya tamamen sonlandırma hakkını saklı tutar.
@@ -71,7 +71,7 @@ export default function Terms() {
                             <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                 <p className="text-text-muted font-bold text-lg">6</p>
                             </div>
-                            <p className="text-2xl font-bold">Kullanım Şartlarında Değişiklikler</p>
+                            <p className="text-lg md:text-2xl font-bold">Kullanım Şartlarında Değişiklikler</p>
                         </div>
                         <div className="px-13 text-text-muted">
                             Bu kullanım şartları zaman zaman güncellenebilir. Güncellenmiş şartlar platform üzerinde yayınlandığı anda yürürlüğe girer.
@@ -79,7 +79,7 @@ export default function Terms() {
                     </div>
                     <div className="bg-blue-100 border border-blue-300 shadow rounded-2xl p-7 flex flex-col md:flex-row items-center justify-between gap-3">
                         <div className="flex flex-col gap-1">
-                           <p className="text-2xl font-bold">İletişim</p>
+                           <p className="text-lg md:text-2xl font-bold">İletişim</p>
                             <div className="text-text-muted">
                                Kullanım şartları ile ilgili sorularınız için bizimle iletişime geçebilirsiniz.
                             </div> 
