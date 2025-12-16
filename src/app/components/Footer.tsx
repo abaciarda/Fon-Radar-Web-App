@@ -1,4 +1,5 @@
 import { RadarIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -22,54 +23,44 @@ export default function Footer() {
                 {/* Fon Takibi */}
                 <div className="flex flex-col gap-3">
                     <p className="text-sm font-bold text-text-main">Fon Takibi</p>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    <Link href="/funds/TLY" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         TLY Fon Takip
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    </Link>
+                    <Link href="/funds/DFI" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         DFI Fon Takip
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    </Link>
+                    <Link href="/funds/SNY" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         SNY Fon Takip
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    </Link>
+                    <Link href="/funds" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         Tüm Fonlar
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Hızlı Linkler */}
                 <div className="flex flex-col gap-3">
                     <p className="text-sm font-bold text-text-main">Hızlı Linkler</p>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
-                        Fon Performansları
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    <Link href="/funds" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         Güncel Fon Verileri
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
-                        Fon Karşılaştırma
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    </Link>
+                    <Link href="/favorites" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         Fon Takip Listem
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Platform */}
                 <div className="flex flex-col gap-3">
                     <p className="text-sm font-bold text-text-main">Platform</p>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    <Link href="/about" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         Hakkımızda
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
-                        Veri Kaynakları
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    </Link>
+                    <Link href="/terms" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         Kullanım Şartları
-                    </a>
-                    <a href="#" className="text-sm text-text-muted hover:text-text-main transition-colors">
+                    </Link>
+                    <Link href="/privacy" className="text-sm text-text-muted hover:text-text-main transition-colors">
                         Gizlilik Politikası
-                    </a>
+                    </Link>
                 </div>
-
             </div>
         </footer>
 
