@@ -1,11 +1,12 @@
 "use client"
-import { ChartPieIcon, GemIcon, HandIcon, ZapIcon } from "lucide-react";
+import { ChartPieIcon, ChevronsUpIcon, ChevronUp, GemIcon, HandIcon, ZapIcon } from "lucide-react";
 import Link from "next/link";
 import { LineChart, Line } from "recharts";
 
 export default function Home() {
-  const monthlyPerformanceFunds = [{ fundName: "TLY", fundPerf: 4.43 }, { fundName: "DFI", fundPerf: 5.43 },
-  { fundName: "ZVU", fundPerf: 6.43 }, { fundName: "SNY", fundPerf: 8.43 }, { fundName: "FSU", fundPerf: 2.43 }
+  const monthlyPerformanceFunds = [
+    { fundName: "TLY", fullName: "Tera Portföy Birinci Serbest Fon", fundPerf: 4.43, risk: 7 }, { fundName: "DFI",fullName: "Atlas Portföy Serbest Fon", fundPerf: 5.43, risk: 7 },
+    { fundName: "ZVO", fullName: "Ziraat Portföy Üçüncü Serbest Fon", fundPerf: 6.43, risk: 5 }, { fundName: "SNY", fundPerf: 8.43, risk: 5 }, { fundName: "FSU", fundPerf: 2.43, risk: 3 }
   ]
   const data = [
     { v: 0 },
@@ -132,20 +133,45 @@ export default function Home() {
             <p className="text-4xl font-bold leading-[1.1] tracking-tight text-text-main">En İyi Performans Gösteren 3 Fon</p>
             <p className="text-text-main text-lg">Son 3 aylık performans raporlarına göre hazırlanmıştır.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {monthlyPerformanceFunds.slice(0, 3).map((fund) => (
-              <Link href={`/funds/${fund.fundName}`} key={fund.fundName} className="p-7 bg-white rounded-2xl drop-shadow-sm border border-gray-200 group flex flex-col hover:-translate-y-2 transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gray-200 rounded-2xl"></div>
-                    <p className="text-xl font-bold group-hover:text-primary transition-colors">{fund.fundName}</p>
+          <div className="flex flex-col gap-8">
+            {monthlyPerformanceFunds.slice(0,3).map((fund, index) => (
+              <Link key={index} href={`/funds/${fund.fundName}`} className="bg-white shadow border border-gray-200 py-7 px-10 rounded-3xl flex items-center justify-between">
+                <div className="flex items-center gap-8">
+                  <p className="text-4xl font-bold text-[#d1d5db]">0{index + 1}</p>
+                  <div className="w-14 h-14 rounded-2xl bg-gray-200"></div>
+                  <div className="flex flex-col">
+                    <p className="font-bold text-2xl">{fund.fundName} - {fund.fullName}</p>
+                    <div className="flex items-center gap-0.5">
+                      <ChevronsUpIcon className="text-green-600"/>
+                      <div className="text-green-600 text-xl font-semibold flex items-center gap-2">
+                          1
+                        <p className="text-text-muted text-sm font-normal">- Kasım Ayına Göre</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="bg-gray-200 rounded-full py-1 px-4 text-green-800 text-sm">
-                    +1.2%
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex flex-col px-5 border-r border-gray-200">
+                    <p className="text-sm text-right">Getiri</p>
+                    <p className="text-2xl font-bold text-green-600">+{fund.fundPerf}%</p>
+                  </div>
+                  <div className="flex flex-col gap-2 justify-center items-center">
+                    <p className="text-sm text-text-muted">Risk Değeri</p>
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(7)].map((_, index) => (
+                        <div 
+                          key={index} 
+                          className={`w-2 h-2 rounded-full ${
+                            index < fund.risk ? "bg-red-500" : "bg-gray-200"
+                          }`} 
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Link>
             ))}
+            
           </div>
           <Link href={'/funds'} className="flex w-max mx-auto h-12 items-center justify-center px-8 rounded-full bg-primary text-white text-base font-bold shadow-sm hover:translate-y-[-5px] transition-transform">
             Tüm Fonlara Göz At
@@ -172,7 +198,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative w-full md:aspect-square xl:aspect-4/3 rounded-3xl overflow-hidden grid lg:grid-cols-2 p-1 gap-4">
+            <div className="relative w-full rounded-3xl overflow-hidden grid lg:grid-cols-2 p-1 gap-4">
               {infoCards.map((card, index) => (
                 <div key={index} className="p-6 bg-white rounded-2xl drop-shadow-sm border border-gray-200 flex flex-col gap-1">
                   <div className="flex items-center gap-4">
@@ -182,7 +208,7 @@ export default function Home() {
                     <p className="text-xl font-bold"></p>
                   </div>
                   <p className="text-lg font-bold">{card.title}</p>
-                  <p className="lg:-mb-20 text-text-muted text-sm">{card.description}</p>
+                  <p className="text-text-muted text-sm">{card.description}</p>
                 </div>
               ))}
             </div>
