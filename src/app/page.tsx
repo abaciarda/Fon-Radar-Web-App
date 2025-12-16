@@ -135,13 +135,13 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-8">
             {monthlyPerformanceFunds.slice(0,3).map((fund, index) => (
-              <Link key={index} href={`/funds/${fund.fundName}`} className="bg-white shadow border border-gray-200 py-7 px-10 rounded-3xl flex items-center justify-between">
-                <div className="flex items-center gap-8">
+              <Link key={index} href={`/funds/${fund.fundName}`} className="bg-white shadow border border-gray-200 py-7 px-4 lg:px-10 rounded-3xl flex flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8">
                   <p className="text-4xl font-bold text-[#d1d5db]">0{index + 1}</p>
                   <div className="w-14 h-14 rounded-2xl bg-gray-200"></div>
                   <div className="flex flex-col">
-                    <p className="font-bold text-2xl">{fund.fundName} - {fund.fullName}</p>
-                    <div className="flex items-center gap-0.5">
+                    <p className="font-bold text-lg lg:text-2xl text-center md:text-normal">{fund.fundName} - {fund.fullName}</p>
+                    <div className="flex justify-center md:justify-normal items-center gap-0.5">
                       <ChevronsUpIcon className="text-green-600"/>
                       <div className="text-green-600 text-xl font-semibold flex items-center gap-2">
                           1
@@ -150,9 +150,9 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex flex-col px-5 border-r border-gray-200">
-                    <p className="text-sm text-right">Getiri</p>
+                <div className="flex justify-center items-center gap-4 pt-3 md:pt-0">
+                  <div className="flex flex-col px-2 md:px-5 border-r border-gray-200">
+                    <p className="text-sm md:text-right">Getiri</p>
                     <p className="text-2xl font-bold text-green-600">+{fund.fundPerf}%</p>
                   </div>
                   <div className="flex flex-col gap-2 justify-center items-center">
