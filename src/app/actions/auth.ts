@@ -1,6 +1,6 @@
 'use server'
 
-import { setTokenCookie } from "@/lib/session";
+import { clearTokenCookie, setTokenCookie } from "@/lib/session";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -44,4 +44,9 @@ export async function loginUser(formData: FormData) {
     }
 
     return data;
+}
+
+export async function logoutUser() {
+    (await cookies()).set(clearTokenCookie());
+    redirect("/");
 }
