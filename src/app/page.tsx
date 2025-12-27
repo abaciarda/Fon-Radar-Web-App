@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LineChart, Line } from "recharts";
 
 export default function Home() {
+
   const monthlyPerformanceFunds = [
     { fundName: "TLY", fullName: "Tera Portföy Birinci Serbest Fon", fundPerf: 4.43, risk: 7 }, { fundName: "DFI",fullName: "Atlas Portföy Serbest Fon", fundPerf: 5.43, risk: 7 },
     { fundName: "ZVO", fullName: "Ziraat Portföy Üçüncü Serbest Fon", fundPerf: 6.43, risk: 5 }, { fundName: "SNY", fundPerf: 8.43, risk: 5 }, { fundName: "FSU", fundPerf: 2.43, risk: 3 }

@@ -5,14 +5,16 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 
+import { useAuth } from "@/providers/AuthProvider"
+
 export default function Navigation() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const { user } = useAuth()
 
   const navMenus = [
     { title: "Fonlar", url: "/funds" },
     { title: "Hakkımızda", url: "/about" },
-    { title: "Favorilerim", url: "/favorites" },
     { title: "Giriş Yap", url: "/login" },
     { title: "Kayıt Ol", url: "/register" },
   ]
@@ -22,7 +24,7 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
-        
+
         <Link href={"/"} className="flex items-center gap-2">
           <div className="flex items-center justify-center size-10 rounded-full bg-primary text-white">
             <RadarIcon />
@@ -37,11 +39,20 @@ export default function Navigation() {
             <Link
               key={item.title}
               href={item.url}
-              className={` h-10 px-5 rounded-full flex items-center text-sm font-medium transition-all ${ isActive(item.url) ? "bg-primary text-white" : "text-text-muted hover:bg-primary hover:text-white" } `}
+              className={` h-10 px-5 rounded-full flex items-center text-sm font-medium transition-all ${isActive(item.url) ? "bg-primary text-white" : "text-text-muted hover:bg-primary hover:text-white"} `}
             >
               {item.title}
             </Link>
           ))}
+
+          {user && (
+            <Link
+              href={"/profile"}
+              className=" h-10 px-5 rounded-full flex items-center text-sm font-medium transition-all bg-primary text-white"
+            >
+              {user.username}
+            </Link>
+          )}
         </div>
 
         <button
@@ -60,7 +71,7 @@ export default function Navigation() {
                 key={item.title}
                 href={item.url}
                 onClick={() => setOpen(false)}
-                className={` h-11 px-4 rounded-xl flex items-center text-sm font-medium transition ${ isActive(item.url) ? "bg-primary text-black" : "text-text-muted hover:bg-primary hover:text-black" } `}
+                className={` h-11 px-4 rounded-xl flex items-center text-sm font-medium transition ${isActive(item.url) ? "bg-primary text-black" : "text-text-muted hover:bg-primary hover:text-black"} `}
               >
                 {item.title}
               </Link>
