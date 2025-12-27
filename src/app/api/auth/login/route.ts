@@ -1,21 +1,25 @@
 import pool from "@/lib/db";
 import { generateToken } from "@/lib/jwt";
-import { AuthResponse, LoginRequest } from "@/types/auth";
+import { AuthResponse } from "@/types/auth";
 import bcrypt from "bcryptjs";
-import { ResultSetHeader, RowDataPacket } from "mysql2";
+import { RowDataPacket } from "mysql2";
 import { NextRequest, NextResponse } from "next/server";
+import { loginSchema } from "@/app/schemas/loginSchema";
 
 export async function POST(request: NextRequest) {
     try {
-        const body: LoginRequest = await request.json();
-        const { username, password } = body;
+        const body = await request.json();
 
-        if (!username || !password) {
+        const parsed = loginSchema.safeParse(body);
+
+        if (!parsed.success) {
             return NextResponse.json<AuthResponse>(
-                { success: false, message: "Kullanıcı adı ve şifre gereklidir." },
+                { success: false, message: parsed.error.issues[0].message },
                 { status: 400 }
             );
         }
+
+        const { username, password } = parsed.data;
 
         const [users] = await pool.query<RowDataPacket[]>(
             'SELECT id, email, username, password FROM users WHERE username = ?',

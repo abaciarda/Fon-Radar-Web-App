@@ -18,7 +18,7 @@ export default function Register() {
                         <p className="text-3xl font-extrabold">Kayıt Ol</p>
                         <p className="text-text-muted text-center">Favori fonlarınızı takip etmek için yeni bir hesap oluşturun </p>
                     </div>
-                    <form action={registerUser} method="POST" className="bg-white border border-gray-200 shadow mt-4 p-8 md:p-10 rounded-3xl max-w-[540px] w-full mx-auto flex flex-col gap-8">
+                    <form action={registerUser} className="bg-white border border-gray-200 shadow mt-4 p-8 md:p-10 rounded-3xl max-w-[540px] w-full mx-auto flex flex-col gap-8">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="username" className="font-medium text-lg">Kullanıcı Adı</label>
                             <input type="text" name="username" id="username" placeholder="Kullanıcı adınız..." className="bg-white p-4 rounded-2xl border border-gray-200 focus:ring-primary focus-visible:outline-primary" />

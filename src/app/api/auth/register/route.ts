@@ -1,45 +1,29 @@
 import pool from "@/lib/db";
-import { AuthResponse, RegisterRequest } from "@/types/auth";
+import { AuthResponse } from "@/types/auth";
 import { ResultSetHeader, RowDataPacket } from "mysql2";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { generateToken } from "@/lib/jwt";
 import { setTokenCookie } from "@/lib/session";
+import { registerSchema } from "@/app/schemas/registerSchema";
 
 export async function POST(request: NextRequest) {
     try {
-        const body: RegisterRequest = await request.json();
+        const body = await request.json();
 
-        const { email, username, password, repeatPassword } = body;
+        const parsed = registerSchema.safeParse(body);
 
-        if (!email || !username || !password || !repeatPassword) {
+        if (!parsed.success) {
             return NextResponse.json<AuthResponse>(
-                { success: false, message: "Email, Kullanıcı adı ve şifre gereklidir." },
-                { status: 400 }
-            );
-        };
-
-        if (password !== repeatPassword) {
-            return NextResponse.json<AuthResponse>(
-                { success: false, message: "Şifreler birbiriyle uyuşmuyor." },
+                {
+                    success: false,
+                    message: parsed.error.issues[0].message
+                },
                 { status: 400 }
             );
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json<AuthResponse>(
-                { success: false, message: "Geçersiz Email Formatı" },
-                { status: 400 }
-            )
-        }
-
-        if (password.length < 6) {
-            return NextResponse.json<AuthResponse>(
-                { success: false, message: "Şifre en az 6 karakterden oluşmalıdır." },
-                { status: 400 }
-            )
-        }
+        const { email, username, password } = parsed.data;
 
         const [isEmailExist] = await pool.query<RowDataPacket[]>(
             'SELECT id FROM users WHERE email = ?', [email]
@@ -50,7 +34,7 @@ export async function POST(request: NextRequest) {
         );
 
         if (isEmailExist.length > 0) {
-            return NextResponse.json(
+            return NextResponse.json<AuthResponse>(
                 { success: false, message: "Bu email adresi zaten kullanılıyor." },
                 { status: 409 }
             )

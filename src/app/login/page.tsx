@@ -18,7 +18,7 @@ export default function Login() {
                         <p className="text-3xl font-extrabold">Giriş Yap</p>
                         <p className="text-text-muted text-center">Favori fonlarınızı takip etmek için hesabınıza giriş yapın.</p>
                     </div>
-                    <form action={loginUser} method="POST" className="bg-white border border-gray-200 shadow mt-4 p-8 md:p-10 rounded-3xl max-w-[540px] w-full mx-auto flex flex-col gap-8">
+                    <form action={loginUser} className="bg-white border border-gray-200 shadow mt-4 p-8 md:p-10 rounded-3xl max-w-[540px] w-full mx-auto flex flex-col gap-8">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="username" className="font-medium text-lg">E-Posta</label>
                             <input type="text" name="username" id="username" placeholder="Kullanıcı adınız..." className="bg-white p-4 rounded-2xl border border-gray-200 focus:ring-primary focus-visible:outline-primary" />

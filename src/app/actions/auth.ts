@@ -2,6 +2,7 @@
 
 import { setTokenCookie } from "@/lib/session";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export async function registerUser(formData: FormData) {
     const response = await fetch(`${process.env.NEXT_API_URL}/auth/register`, {
@@ -19,6 +20,7 @@ export async function registerUser(formData: FormData) {
 
     if (data.success && data.token) {
         (await cookies()).set(setTokenCookie(data.token));
+        redirect("/");
     }
 
     return data;
@@ -38,6 +40,8 @@ export async function loginUser(formData: FormData) {
 
     if (data.success && data.token) {
         (await cookies()).set(setTokenCookie(data.token));
+        redirect("/");
     }
+
     return data;
 }
